@@ -1,18 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: wil-ingress
+  name: wil-playground-ingress
   namespace: dev
-  annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: wil-playground-service  # Must match your Service name
-                port:
-                  number: 80                  # Must match the 'port' in service.yaml
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wil-playground-service
+            port:
+              number: 80
