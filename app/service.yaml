@@ -8,6 +8,6 @@ spec:
     app: wil-playground
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 8888
+    port: 80           # Ingress talks to this port
+    targetPort: 8888   # This matches your containerPort in deployment.yaml
   type: LoadBalancer
